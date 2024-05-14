@@ -12,18 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quick_Med"
         tools:targetApi="31">
-        <activity
-            android:name=".SearchMed"
-            android:exported="false" />
-        <activity
-            android:name=".My_Med"
-            android:exported="false" />
-        <activity
-            android:name=".Calendar"
-            android:exported="false" />
-        <activity
-            android:name=".Alarm"
-            android:exported="false" />
+        <activity android:name=".SearchMed"/>
+        <activity android:name=".My_Med"/>
+        <activity android:name=".Calendar"/>
+        <activity android:name=".Alarm"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
