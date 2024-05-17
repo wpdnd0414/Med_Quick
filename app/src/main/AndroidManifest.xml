@@ -10,17 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Quick_Med"
+        android:theme="@style/AppTheme"
         tools:targetApi="31">
-        <activity android:name=".SearchMed"/>
-        <activity android:name=".My_Med"/>
-        <activity android:name=".Calendar"/>
-        <activity android:name=".Alarm"/>
+        <activity android:name=".SearchMed" android:theme="@style/AppTheme"/>
+        <activity android:name=".My_Med" android:theme="@style/AppTheme"/>
+        <activity android:name=".Calendar" android:theme="@style/AppTheme"/>
+        <activity android:name=".Alarm" android:theme="@style/AppTheme"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Quick_Med">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

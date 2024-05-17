@@ -33,6 +33,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SearchMed::class.java)
             startActivity(intent)
         }
-        //asasasasasasasas
     }
 }
