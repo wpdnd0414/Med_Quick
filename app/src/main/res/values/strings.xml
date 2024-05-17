@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Quick_Med</string>
+    <string name="title_activity_intro">Intro</string>
+    <string name="title_activity_intro2">Intro2</string>
 </resources>
