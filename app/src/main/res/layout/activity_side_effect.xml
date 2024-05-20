@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 약품 이미지 -->
+
+    <!-- 약품 이름 -->
+
+    <!-- 약품 설명 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="120px"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/drug_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/drug_image"
+            android:layout_centerInParent="true"
+            android:text="Med_Name1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/drug_image"
+            android:layout_width="243dp"
+            android:layout_height="139dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="94dp"
+            android:src="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/drug_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/drug_image"
+            android:layout_marginTop="20dp"
+            android:text="Lorem ipsum dolor sit amet..."
+            android:textSize="18sp" />
+
+        <!-- 효능 및 효과 제목 -->
+
+        <!-- 효능 및 효과 목록 -->
+
+    </LinearLayout>
+
+</RelativeLayout>

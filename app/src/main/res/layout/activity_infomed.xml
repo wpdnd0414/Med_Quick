@@ -15,15 +15,18 @@
         android:id="@+id/medicineImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
         android:contentDescription="@string/medicine_image"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder" />
 
     <LinearLayout
         android:id="@+id/medicineInfoSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/medicineImage"
-        android:layout_marginTop="107dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:padding="8dp">
 
