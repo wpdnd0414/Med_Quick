@@ -6,26 +6,31 @@
     android:padding="16dp"
     android:id="@+id/main">
 
-    <!-- 검색 바 -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="약품검색"
-        android:gravity="center" />
+        android:gravity="center"
+        android:text="약품 검색"
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
     <SearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="약품 검색"
-        android:layout_marginTop="10px"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:iconifiedByDefault="false"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:queryHint="약품의 이름을 입력" />
 
-    <!-- 검색 결과를 표시할 리스트뷰 -->
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="449dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="10dp"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp" />
 </LinearLayout>
