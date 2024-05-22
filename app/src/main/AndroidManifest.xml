@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".Set_Alarm"
+            android:name=".SetAlarm"
             android:exported="false" />
         <activity
             android:name=".Intro2"
@@ -41,7 +41,7 @@
             android:name=".Calendar"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Alarm"
+            android:name=".SetAlarm1"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".MainActivity"
