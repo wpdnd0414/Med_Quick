@@ -2,4 +2,9 @@
     <string name="app_name">Quick_Med</string>
     <string name="title_activity_intro">Intro</string>
     <string name="title_activity_intro2">Intro2</string>
+    <string name="number_picker_formatter">%02d</string>
+    <string-array name="am_pm_array">
+        <item>오전</item>
+        <item>오후</item>
+    </string-array>
 </resources>
