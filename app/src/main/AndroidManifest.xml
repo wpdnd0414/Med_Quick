@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +15,12 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".SetAlarm"
+            android:name=".Search_Med"
+            android:exported="false"
+            android:label="@string/title_activity_search_med"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SideEffect"
             android:exported="false" />
         <activity
             android:name=".Intro2"
@@ -32,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SearchMed"
+            android:name=".InfoMed"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".My_Med"
@@ -41,13 +48,13 @@
             android:name=".Calendar"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".SetAlarm1"
+            android:name=".Alarm"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
