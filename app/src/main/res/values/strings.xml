@@ -2,4 +2,11 @@
     <string name="app_name">Quick_Med</string>
     <string name="title_activity_intro">Intro</string>
     <string name="title_activity_intro2">Intro2</string>
+    <string name="title_activity_search_med">Search_Med</string>
+    <string name="medicine_image">약 이미지</string>
+    <string name="effect_info">효과 정보</string>
+    <string name="dosage_info">복용 방법</string>
+    <string name="side_effects_info">부작용 정보</string>
+    <string name="yes">예</string>
+    <string name="no">아니요</string>
 </resources>
