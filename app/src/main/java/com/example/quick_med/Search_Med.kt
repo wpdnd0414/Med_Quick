@@ -9,39 +9,19 @@ import java.net.HttpURLConnection
 import java.net.URL
 import kotlin.concurrent.thread
 import com.squareup.picasso.Picasso
+import android.widget.Toast
 
 class Search_Med : AppCompatActivity() {
 
     private lateinit var searchView: SearchView
     private lateinit var listView: ListView
-    private val serviceKey = "YOUR_SERVICE_KEY" // 실제 발급받은 서비스 키를 사용하세요
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_searchmed)
-
-        searchView = findViewById(R.id.search_view)
-        listView = findViewById(R.id.list_view)
-
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                if (query != null) {
-                    searchMedicines(query)
-                }
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return false
-            }
-        })
-    }
+    private val serviceKey = "zp%2FXmsF6TzhsNiU1jUF2ElWrarTPBUzV7ccDYcc8jPtbcz3%2BkkzF9ZG%2BegIM2ib7CgLvq1LEZF%2FrG0MH1gDqLw%3D%3D" // 실제 발급받은 서비스 키를 사용하세요
 
     private fun searchMedicines(query: String) {
         thread {
             try {
                 val encodedQuery = java.net.URLEncoder.encode(query, "UTF-8")
-                val url = URL("http://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=$serviceKey&trustEntpName=$encodedQuery&pageNo=1&startPage=1&numOfRows=3")
+                val url = URL("https://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=$serviceKey&pageNo=1&numOfRows=100&itemName=$encodedQuery&type=json")
                 val connection = url.openConnection() as HttpURLConnection
                 connection.requestMethod = "GET"
 
@@ -63,7 +43,34 @@ class Search_Med : AppCompatActivity() {
 
             } catch (e: Exception) {
                 e.printStackTrace()
+                runOnUiThread {
+                    Toast.makeText(this@Search_Med, "검색에 실패했습니다: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
             }
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_searchmed)
+
+        searchView = findViewById(R.id.search_view)
+        listView = findViewById(R.id.list_view)
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                if (query != null) {
+                    searchMedicines(query)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    searchMedicines(newText)
+                }
+                return true
+            }
+        })
     }
 }
