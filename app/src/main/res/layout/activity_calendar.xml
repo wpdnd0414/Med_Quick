@@ -3,6 +3,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
@@ -25,6 +26,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
+        android:background="#9C9C9C"
         android:gravity="center"
         android:text="복용 약품 목록"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -38,7 +40,7 @@
         android:layout_height="140dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="150dp"
         android:hint="09:00     :       아침약\n12:00     :       점심약"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -48,7 +50,6 @@
         app:layout_constraintTop_toBottomOf="@+id/diaryTextView" />
 
 
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
@@ -56,6 +57,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:background="#9C9C9C"
         android:gravity="center"
         android:text="약품 복용 기록 달력"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -65,7 +67,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="105dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
+        android:hint="V\nX"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/contextEditText"
+        app:layout_constraintTop_toBottomOf="@+id/diaryTextView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
