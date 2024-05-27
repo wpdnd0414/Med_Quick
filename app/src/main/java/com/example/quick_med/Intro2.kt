@@ -12,22 +12,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import android.os.Handler
 import android.content.Intent
-import android.os.Looper
-import android.widget.ImageView
 
 class Intro2 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro2)
 
-        // Ensure the ImageView is being set properly
-        val introImageView = findViewById<ImageView>(R.id.introImageView)
-
-        // 3초 후에  액티비티로 전환
-        Handler(Looper.getMainLooper()).postDelayed({
+        var handler = Handler()
+        handler.postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish() // 인트로 액티비티를 종료하여 뒤로 가기 버튼을 눌렀을 때 다시 돌아오지 않게 함
-        }, 3000) // 3000밀리초 == 3초
+            finish()
+        }, 5000)
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        // Do nothing
     }
 }

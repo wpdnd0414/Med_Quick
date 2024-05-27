@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         val buttonSearchMed = findViewById<Button>(R.id.button_search_med)
         buttonSearchMed.setOnClickListener {
-            val intent = Intent(this, Search_Med::class.java)
+            val intent = Intent(this, SearchMed::class.java)
             startActivity(intent)
         }
     }
