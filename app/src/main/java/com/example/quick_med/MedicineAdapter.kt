@@ -1,5 +1,3 @@
-package com.example.quick_med
-
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -7,18 +5,18 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.quick_med.Medicine
+import com.example.quick_med.R
 import com.squareup.picasso.Picasso
 
-class MedicineAdapter(private val context: Context, private val dataSource: List<Medicine>) : BaseAdapter() {
-
-    private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+class MedicineAdapter(private val context: Context, private val medicines: List<Medicine>) : BaseAdapter() {
 
     override fun getCount(): Int {
-        return dataSource.size
+        return medicines.size
     }
 
     override fun getItem(position: Int): Any {
-        return dataSource[position]
+        return medicines[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -26,16 +24,22 @@ class MedicineAdapter(private val context: Context, private val dataSource: List
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val rowView = convertView ?: inflater.inflate(R.layout.list_item_medicine, parent, false)
-        val nameTextView = rowView.findViewById<TextView>(R.id.medicine_name)
-        val descriptionTextView = rowView.findViewById<TextView>(R.id.medicine_description)
-        val imageView = rowView.findViewById<ImageView>(R.id.medicine_image)
+        val view: View = convertView ?: LayoutInflater.from(context).inflate(R.layout.list_item_medicine, parent, false)
+        val medicine = medicines[position]
 
-        val medicine = getItem(position) as Medicine
+        val nameTextView = view.findViewById<TextView>(R.id.medicine_name)
+        val descriptionTextView = view.findViewById<TextView>(R.id.medicine_description)
+        val imageView = view.findViewById<ImageView>(R.id.medicine_image)
+
         nameTextView.text = medicine.name
         descriptionTextView.text = medicine.description
-        Picasso.get().load(medicine.imageUrl).into(imageView)
 
-        return rowView
+        if (medicine.imageUrl != null) {
+            Picasso.get().load(medicine.imageUrl).into(imageView)
+        } else {
+            imageView.setImageResource(R.drawable.placeholder_image)  // 대체 이미지 리소스 ID 사용
+        }
+
+        return view
     }
 }

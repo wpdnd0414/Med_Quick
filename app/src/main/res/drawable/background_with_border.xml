@@ -1,0 +1,10 @@
+
+    <!-- res/drawable/background_with_border.xml -->
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <solid android:color="#FFFFFF"/> <!-- 배경 색깔을 흰색으로 지정 (필요에 따라 변경 가능) -->
+        <stroke
+            android:width="2dp"
+            android:color="#000000"/> <!-- 테두리 색깔을 검정색으로 지정 (필요에 따라 변경 가능) -->
+        <corners android:radius="4dp"/> <!-- 테두리의 모서리를 둥글게 설정 (필요에 따라 변경 가능) -->
+    </shape>
+

@@ -1,26 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/medicine_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/placeholder" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/medicine_image" />
 
     <TextView
         android:id="@+id/medicine_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Medicine Name"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingTop="5dp" />
 
     <TextView
         android:id="@+id/medicine_description"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Medicine Description" />
+        android:paddingTop="5dp" />
 </LinearLayout>

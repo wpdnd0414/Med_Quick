@@ -1,21 +1,23 @@
 package com.example.quick_med
 
+
+import MedicineAdapter
 import android.os.Bundle
 import android.widget.ListView
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
-import org.json.JSONArray
+import org.json.JSONObject
 import java.net.HttpURLConnection
 import java.net.URL
 import kotlin.concurrent.thread
-import com.squareup.picasso.Picasso
 import android.widget.Toast
+import com.example.quick_med.Medicine
 
 class Search_Med : AppCompatActivity() {
 
     private lateinit var searchView: SearchView
     private lateinit var listView: ListView
-    private val serviceKey = "zp%2FXmsF6TzhsNiU1jUF2ElWrarTPBUzV7ccDYcc8jPtbcz3%2BkkzF9ZG%2BegIM2ib7CgLvq1LEZF%2FrG0MH1gDqLw%3D%3D" // 실제 발급받은 서비스 키를 사용하세요
+    private val serviceKey = "zp%2FXmsF6TzhsNiU1jUF2ElWrarTPBUzV7ccDYcc8jPtbcz3%2BkkzF9ZG%2BegIM2ib7CgLvq1LEZF%2FrG0MH1gDqLw%3D%3D"
 
     private fun searchMedicines(query: String) {
         thread {
@@ -26,19 +28,27 @@ class Search_Med : AppCompatActivity() {
                 connection.requestMethod = "GET"
 
                 val response = connection.inputStream.bufferedReader().use { it.readText() }
-                val jsonArray = JSONArray(response)
+                println("API Response: $response")
+
+                val jsonObject = JSONObject(response)
+                val body = jsonObject.getJSONObject("body")
+                val items = body.getJSONArray("items")
 
                 val medicines = mutableListOf<Medicine>()
-                for (i in 0 until jsonArray.length()) {
-                    val jsonObject = jsonArray.getJSONObject(i)
-                    val name = jsonObject.getString("itemName")
-                    val description = jsonObject.getString("efcyQesitm")
-                    val imageUrl = jsonObject.getString("itemImage")
+                for (i in 0 until items.length()) {
+                    val item = items.getJSONObject(i)
+                    val name = item.getString("itemName")
+                    val description = item.getString("efcyQesitm")
+                    val imageUrl = if (item.has("itemImage") && !item.isNull("itemImage")) item.getString("itemImage") else null
                     medicines.add(Medicine(name, description, imageUrl))
                 }
 
                 runOnUiThread {
-                    listView.adapter = MedicineAdapter(this@Search_Med, medicines)
+                    if (medicines.isNotEmpty()) {
+                        listView.adapter = MedicineAdapter(this@Search_Med, medicines)
+                    } else {
+                        Toast.makeText(this@Search_Med, "검색 결과가 없습니다.", Toast.LENGTH_SHORT).show()
+                    }
                 }
 
             } catch (e: Exception) {
@@ -66,10 +76,7 @@ class Search_Med : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                if (newText != null) {
-                    searchMedicines(newText)
-                }
-                return true
+                return false
             }
         })
     }
