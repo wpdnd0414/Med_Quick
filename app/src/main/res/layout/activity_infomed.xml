@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 상단의 약 이미지 표시 영역 -->
+
+    <!-- 약 정보 섹션 -->
+
+    <!-- '예' 버튼 -->
+
+    <!-- '아니요' 버튼 -->
+
+    <ImageView
+        android:id="@+id/medicineImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/medicine_image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder" />
+
+    <LinearLayout
+        android:id="@+id/medicineInfoSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medicineImage"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- 효과 정보 -->
+        <TextView
+            android:id="@+id/effectInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/effect_info" />
+
+        <TextView
+            android:id="@+id/Api_effectInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="API에서 가져온 정보" />
+
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000" />
+
+        <!-- 복용 방법 -->
+
+        <TextView
+            android:id="@+id/dosageInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/dosage_info" />
+
+        <TextView
+            android:id="@+id/Api_dosageInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="API에서 가져온 정보" />
+
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000" />
+
+        <!-- 부작용 정보 -->
+        <TextView
+            android:id="@+id/sideEffectsInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/side_effects_info" />
+
+        <TextView
+            android:id="@+id/Api_sideEffectsInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="API에서 가져온 정보" />
+
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/yesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medicineInfoSection"
+        android:layout_toLeftOf="@+id/centerPoint"
+        android:layout_marginTop="125dp"
+        android:layout_marginRight="25dp"
+        android:text="@string/yes" />
+
+    <Button
+        android:id="@+id/noButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medicineInfoSection"
+        android:layout_toRightOf="@+id/centerPoint"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="25dp"
+        android:text="@string/no" />
+
+    <!-- 화면 중앙을 기준으로 하는 뷰 -->
+    <View
+        android:id="@+id/centerPoint"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="133dp"
+        android:text="MY약에 추가" />
+
+</RelativeLayout>
