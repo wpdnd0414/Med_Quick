@@ -44,7 +44,7 @@ class SetAlarm : AppCompatActivity() {
         //알람 설정 화면으로 이동하는 버튼
         val button: Button = findViewById(R.id.addbutton)
         button.setOnClickListener {
-            val intent = Intent(this, SetAlarm1::class.java)
+            val intent = Intent(this, <여기에 알람설정 엑티비티 이름> ::class.java)
             startActivityForResult(intent, REQUEST_CODE)
         }
     }
