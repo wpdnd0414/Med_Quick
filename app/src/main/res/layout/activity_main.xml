@@ -180,4 +180,19 @@
         app:srcCompat="@drawable/logo"
         tools:layout_editor_absoluteY="677dp" />
 
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="204dp"
+        android:layout_height="38dp"
+        android:text="M월 D일 E요일"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
