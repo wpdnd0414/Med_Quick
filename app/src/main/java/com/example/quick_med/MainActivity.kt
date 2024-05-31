@@ -7,12 +7,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        val dateTextView: TextView = findViewById(R.id.dateTextView)
+        val calendar = java.util.Calendar.getInstance()
+        val dateFormat = SimpleDateFormat("M월 d일 E요일", Locale.KOREAN)
+        val dateString = dateFormat.format(calendar.time)
+        dateTextView.text = dateString
+
 
         val buttonAlarm = findViewById<Button>(R.id.button_alarm)
         buttonAlarm.setOnClickListener {

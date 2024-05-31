@@ -24,7 +24,7 @@ class SetAlarm : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_set_alarm)
+        setContentView(R.layout.activity_set_alarm_0)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -33,7 +33,7 @@ class SetAlarm : AppCompatActivity() {
         }
 
         // 오늘 날짜를 표시해줌.feat GPT
-        setContentView(R.layout.activity_set_alarm)
+        setContentView(R.layout.activity_set_alarm_0)
         val dateTextView: TextView = findViewById(R.id.dateTextView)
         val calendar = Calendar.getInstance()
         val dateFormat = SimpleDateFormat("M월 d일 E요일", Locale.KOREAN)
