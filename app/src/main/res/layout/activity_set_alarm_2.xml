@@ -12,7 +12,6 @@
         android:orientation="horizontal"
         android:background="@drawable/background_with_border"
         android:layout_marginBottom="16dp">
-        
 
         <!-- 오전/오후 선택 -->
         <Spinner
@@ -107,7 +106,7 @@
             android:id="@+id/button_create_alarm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="알람 수정"
+            android:text="알람 생성"
             android:layout_marginTop="16dp"
             android:textSize="18sp"
             android:padding="12dp"/>
@@ -117,6 +116,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="취소"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:padding="12dp"/>
+    </LinearLayout>
+
+    <!-- 현재 설정된 알람 표시 섹션 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp">
+
+        <TextView
+            android:id="@+id/textView_current_alarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="현재 설정된 알람 없음"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/button_delete_alarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="알람 삭제"
             android:layout_marginTop="16dp"
             android:textSize="18sp"
             android:padding="12dp"/>
