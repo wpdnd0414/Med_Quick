@@ -2,132 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical"
     android:padding="16dp">
 
-
-    <!-- 시간 선택 섹션 -->
-    <LinearLayout
+    <EditText
+        android:id="@+id/alarmLabelEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/background_with_border"
-        android:orientation="horizontal">
+        android:hint="Alarm Label" />
 
-
-        <!-- 오전/오후 선택 -->
-        <Spinner
-            android:id="@+id/spinner_am_pm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:entries="@array/am_pm_array" />
-
-        <!-- 시간 선택 -->
-        <NumberPicker
-            android:id="@+id/numberPicker_hour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp" />
-
-        <!-- 분 선택 -->
-        <NumberPicker
-            android:id="@+id/numberPicker_minute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <!-- 알람 세부사항 섹션 -->
-    <LinearLayout
+    <TimePicker
+        android:id="@+id/alarmTimePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="vertical"> <!-- 여백 추가 -->
+        android:timePickerMode="spinner"
+        android:layout_marginTop="16dp" />
 
-        <!-- 알람 이름 입력 -->
-        <EditText
-            android:id="@+id/editText_alarm_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:hint="알람 이름"
-            android:inputType="textPersonName" />
+    <Switch
+        android:id="@+id/switch_enable_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="알람 활성화"
+        android:layout_marginTop="16dp" />
 
-        <!-- 반복 요일 선택 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:text="반복 요일"
-            android:textSize="16sp" />
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="알람 삭제"
+        android:layout_marginTop="16dp" />
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="7">
-
-            <CheckBox
-                android:id="@+id/checkBox_sunday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일" />
-
-            <CheckBox
-                android:id="@+id/checkBox_monday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="월" />
-
-            <CheckBox
-                android:id="@+id/checkBox_tuesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="화" />
-
-            <CheckBox
-                android:id="@+id/checkBox_wednesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="수" />
-
-            <CheckBox
-                android:id="@+id/checkBox_thursday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="목" />
-
-            <CheckBox
-                android:id="@+id/checkBox_friday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="금" />
-
-            <CheckBox
-                android:id="@+id/checkBox_saturday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="토" />
-        </GridLayout>
-
-        <!-- 알람 생성 버튼 -->
-        <Button
-            android:id="@+id/button_create_alarm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:padding="12dp"
-            android:text="알람 생성"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/button_cancel_alarm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:padding="12dp"
-            android:text="취소"
-            android:textSize="18sp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="알람 수정"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>
