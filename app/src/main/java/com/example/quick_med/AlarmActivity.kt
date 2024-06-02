@@ -8,7 +8,7 @@ class AlarmActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_set_alarm_2)
+        setContentView(R.layout.activity_set_alarm_1)
 
         val hourPicker: NumberPicker = findViewById(R.id.numberPicker_hour)
         val minutePicker: NumberPicker = findViewById(R.id.numberPicker_minute)
