@@ -2,9 +2,7 @@ package com.example.quick_med
 
 
 import MedicineAdapter
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ListView
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
@@ -65,7 +63,6 @@ class Search_Med : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_searchmed)
-
 
         searchView = findViewById(R.id.search_view)
         listView = findViewById(R.id.list_view)

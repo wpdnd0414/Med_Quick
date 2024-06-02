@@ -20,7 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
-
     <Button
         android:id="@+id/button_my_med"
         android:layout_width="80dp"
@@ -29,12 +28,11 @@
         android:text="추가"
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
+        tools:layout_editor_absoluteY="260dp" />
+
 
     <Button
         android:id="@+id/button_search_med"
@@ -49,7 +47,6 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <View
-        android:id="@+id/view3"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_weight="1"
@@ -60,12 +57,8 @@
         android:id="@+id/med_list"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="231dp">
 
         <ImageView
             android:id="@+id/pill_icon"
@@ -107,15 +100,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
         android:layout_width="411dp"
         android:layout_height="42dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view3"
-        app:layout_constraintVertical_bias="0.648">
+        tools:layout_editor_absoluteY="447dp">
 
         <TextView
             android:id="@+id/textView3"
@@ -164,19 +154,14 @@
         android:text="더보기"
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view3"
-        app:layout_constraintVertical_bias="0.688" />
+        tools:layout_editor_absoluteX="315dp"
+        tools:layout_editor_absoluteY="477dp" />
 
     <Button
         android:id="@+id/button_alarm"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/alarm_clock"
-        android:text=" "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.956"
@@ -190,13 +175,10 @@
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_alarm"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/button_calendar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteY="677dp" />
 
     <TextView
         android:id="@+id/dateTextView"
